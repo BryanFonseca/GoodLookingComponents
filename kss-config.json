@@ -3,11 +3,11 @@
   "source": [
     "./css" 
   ],
-  "destination": "docs/", 
+  "destination": "./", 
   "css": [
-    "../css/styles.css" 
+    "./css/styles.css" 
   ],
   "js": [
-    "../js/docs.js" 
+    "./js/docs.js" 
   ]
 }
