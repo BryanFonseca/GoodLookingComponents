@@ -41,7 +41,7 @@ Markup:
 	</ul>
       </div>
       <div class="card__content__author">
-	<img src="http://placehold.it/150x150?text=Author+Image" alt="author-image">
+	<img src="./img/Me.jpg" alt="author-image">
 	<p>Bryan Fonseca</p>
       </div>
     </div>
@@ -59,7 +59,7 @@ Markup:
 	</ul>
       </div>
       <div class="card__content__author">
-	<img src="http://placehold.it/150x150?text=Author+Image" alt="author-image">
+	<img src="./img/Me.jpg" alt="author-image">
 	<p>Bryan Fonseca</p>
       </div>
     </div>
@@ -77,7 +77,7 @@ Markup:
 	</ul>
       </div>
       <div class="card__content__author">
-	<img src="http://placehold.it/150x150?text=Author+Image" alt="author-image">
+	<img src="./img/Me.jpg" alt="author-image">
 	<p>Bryan Fonseca</p>
       </div>
     </div>
@@ -95,7 +95,25 @@ Markup:
 	</ul>
       </div>
       <div class="card__content__author">
-	<img src="http://placehold.it/150x150?text=Author+Image" alt="author-image">
+	<img src="./img/Me.jpg" alt="author-image">
+	<p>Bryan Fonseca</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__content">
+      <div class="card__content__top">
+	<p class="card__content__top__date"><span class="card__content__top__type">Article</span> on Nov 2,
+	2021</p>
+	<h3>Creating the Perfect Commit in Git</h1>
+	<ul class="categories">
+	  <li>Commit</li>
+	  <li>Git</li>
+	  <li>Git Tower</li>
+	</ul>
+      </div>
+      <div class="card__content__author">
+	<img src="./img/Me.jpg" alt="author-image">
 	<p>Bryan Fonseca</p>
       </div>
     </div>
