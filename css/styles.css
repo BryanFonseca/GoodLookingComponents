@@ -1,0 +1,191 @@
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body{
+  font-family: 'Ubuntu', sans-serif;
+  color: #eee;
+}
+
+/*
+Media Cards
+
+Shows a cards stacked one after another (side-by-side) controlling x-overflow with scrolling.
+This module is intended to be used with the **Card** module.
+
+Use the following JavaScript to set the `z-index` property on every Card component so that they don't overlap.
+```js
+  const cards = document.querySelectorAll('.card');
+  let depth = 0;
+  cards.forEach((card) => {
+    card.style.zIndex = depth;
+    depth++;
+  });
+```
+
+Markup:
+<div class="media-cards">
+  <div class="card">
+    <div class="card__content">
+      <div class="card__content__top">
+	<p class="card__content__top__date"><span class="card__content__top__type">Article</span> on Nov 2,
+	2021</p>
+	<h3>Creating the Perfect Commit in Git</h1>
+	<ul class="categories">
+	  <li>Commit</li>
+	  <li>Git</li>
+	  <li>Git Tower</li>
+	</ul>
+      </div>
+      <div class="card__content__author">
+	<img src="http://placehold.it/150x150?text=Author+Image" alt="author-image">
+	<p>Bryan Fonseca</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__content">
+      <div class="card__content__top">
+	<p class="card__content__top__date"><span class="card__content__top__type">Article</span> on Nov 2,
+	2021</p>
+	<h3>Creating the Perfect Commit in Git</h1>
+	<ul class="categories">
+	  <li>Commit</li>
+	  <li>Git</li>
+	  <li>Git Tower</li>
+	</ul>
+      </div>
+      <div class="card__content__author">
+	<img src="http://placehold.it/150x150?text=Author+Image" alt="author-image">
+	<p>Bryan Fonseca</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__content">
+      <div class="card__content__top">
+	<p class="card__content__top__date"><span class="card__content__top__type">Article</span> on Nov 2,
+	2021</p>
+	<h3>Creating the Perfect Commit in Git</h1>
+	<ul class="categories">
+	  <li>Commit</li>
+	  <li>Git</li>
+	  <li>Git Tower</li>
+	</ul>
+      </div>
+      <div class="card__content__author">
+	<img src="http://placehold.it/150x150?text=Author+Image" alt="author-image">
+	<p>Bryan Fonseca</p>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card__content">
+      <div class="card__content__top">
+	<p class="card__content__top__date"><span class="card__content__top__type">Article</span> on Nov 2,
+	2021</p>
+	<h3>Creating the Perfect Commit in Git</h1>
+	<ul class="categories">
+	  <li>Commit</li>
+	  <li>Git</li>
+	  <li>Git Tower</li>
+	</ul>
+      </div>
+      <div class="card__content__author">
+	<img src="http://placehold.it/150x150?text=Author+Image" alt="author-image">
+	<p>Bryan Fonseca</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+Styleguide Media Cards
+*/
+
+.media-cards{
+  display: flex;
+  gap: 1em;
+/*   width: 80vw; */
+  background-color: #999;
+  overflow-x: scroll;
+  padding: 3em 2em;
+}
+
+.card{
+  flex-shrink: 0;
+  width: 20em;
+  cursor: pointer;
+  height: 21em;
+}
+
+.card + .card{
+  margin-left: -9em;
+}
+
+.card__content{
+  background: linear-gradient(to top left, #232526, #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 1em;
+  max-width: 100%;
+  transition: transform 0.4s;
+  padding: 1.5em;
+  transform-origin: top right;
+  box-shadow: -1em 0 2em rgba(0, 0, 0, 35%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card__content__top__date{
+  margin-bottom: 0.3em;
+  color: #aaa;
+}
+
+.card__content__top__type{
+  color: #eee;
+  font-weight: bold;
+}
+
+.card__content h3{
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 0.8em;
+}
+
+.categories{
+  font-size: 0.75rem;
+  display: flex;
+  gap: 0.6em;
+  margin-left: -0.5em;
+  margin-bottom: 1em;
+  color: orange;
+}
+
+.categories > li{
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.card__content__author{
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+.card__content__author img{
+  width: 14%;
+  border-radius: 50%;
+}
+
+.card:first-child{
+  margin-left: 4em;
+}
+
+.card:hover .card__content{
+  transform: translateX(-5em);
+}
