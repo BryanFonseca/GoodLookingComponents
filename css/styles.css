@@ -127,7 +127,7 @@ Styleguide Media Cards
   display: flex;
   gap: 1em;
 /*   width: 80vw; */
-  background-color: #999;
+  background-color: #ddd;
   overflow-x: scroll;
   padding: 3em 2em;
 }
@@ -206,4 +206,90 @@ Styleguide Media Cards
 
 .card:hover .card__content{
   transform: translateX(-5em);
+}
+
+
+/*
+Switch
+
+Shows an inline-block button switch intended to be used as a checkbox.
+
+The size of this module can be changed tweaking the `--growth-factor` custom property from the CSS source file which has an initial value of 1.5.
+
+Use the following JavaScript to switch-on/off.
+```js
+  const switchItem = document.querySelector(".switch");
+  switchItem.addEventListener("click", function() { 
+    this.classList.toggle("switch--active"); 
+  });
+```
+
+Markup:
+<div class="switch">
+  <div class="switch__circle">
+    <div class="switch__circle__inner"></div>
+  </div>
+</div>
+
+Styleguide Switch 
+*/
+
+.switch{
+  --growth-factor: 1.5;
+  display: inline-block;
+  background-color: gray;
+  height: calc(0.8rem * var(--growth-factor));
+  width: calc(2rem * var(--growth-factor));
+  border-radius: 10em;
+  position: relative;
+  cursor: pointer;
+  font-size: calc(0.55rem * var(--growth-factor));
+  margin: .8rem;
+}
+
+.switch--active{
+  background-color: #1971c2 !important;
+}
+
+.switch--active .switch__circle{
+  background-color: #e7f5ff !important;
+  transform: translate(70%, -50%);
+}
+
+.switch--active .switch__circle__inner{
+  border-color: rgba(25,113,194, 0.2) !important;
+}
+
+.switch__circle{
+  background-color: white;
+  border: 0.07em solid black;
+  position: absolute;
+  padding: 1em;
+  border-radius: 50%;
+  top: 50%;
+  left: 0%;
+  transform: translate(0, -50%);
+  transition: transform 0.17s ease-out;
+}
+
+.switch__circle__inner{
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-sizing: content-box;
+  border-width: 0em;
+  border-style: solid;
+  border-color: transparent;
+
+  transition: border-color 0.2s, border-width 0.2s;
+}
+
+.switch:hover .switch__circle__inner{
+  border-color: rgba(0, 0, 0, .2);
+  border-width: 1em;
 }
